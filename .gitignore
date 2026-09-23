@@ -1,0 +1,46 @@
+# Depot public VITRIN3: tout est prive par defaut.
+# Seuls ce fichier et l'artefact genere release/site
+# peuvent etre suivis par Git.
+
+# Exclusions explicites demandees, en defense supplementaire.
+/bureau/
+/business-launch/
+/_archive/
+/website-backups/
+/02 Finances/
+/07 Legal & Admin/
+
+# Autres dossiers et documents de travail prives.
+/_claude-memory/
+/.claude/
+/01 Strategy/
+/03 Website/
+/04 Sales/
+/05 Delivery/
+/06 Tools/
+/08 Brand/
+/40-ops-log/
+/launch-kit/
+/marketing-os/
+/*.md
+/*.cmd
+/*.ps1
+
+# Liste blanche stricte du depot public.
+/*
+!/.gitignore
+!/release/
+/release/*
+!/release/site/
+!/release/site/**
+
+# Ne jamais publier de secrets, meme s'ils apparaissent dans un dossier autorise.
+**/.env
+**/.env.*
+**/*.pem
+**/*.p12
+**/*.pfx
+**/*.key
+**/*credentials*
+**/*secret*
+/launch-kit/.web3forms-access-key
