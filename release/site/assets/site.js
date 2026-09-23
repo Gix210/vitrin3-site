@@ -40,10 +40,10 @@
   const form=document.querySelector('#dem');
   form?.addEventListener('submit',event=>{
     if(['localhost','127.0.0.1',''].includes(location.hostname)){
-      event.preventDefault();const message=form.querySelector('.form-error');message.hidden=false;message.textContent=root.lang==='en'?'Local preview: nothing was sent. This form connects to Web3Forms on the published site.':'Aperçu local : rien n’a été envoyé. Ce formulaire sera traité par Web3Forms sur le site publié.';return;
+      event.preventDefault();const message=form.querySelector('.form-error');message.hidden=false;message.textContent=root.lang==='en'?'Local preview: nothing was sent. This form connects to Web3Forms on the published site.':'Aperçu local : rien n’a été envoyé. Ce formulaire sera traité par Web3Forms sur le site publié.';message.focus();return;
     }
     const captcha=form.querySelector('textarea[name="h-captcha-response"]');
-    if(!captcha?.value){event.preventDefault();const message=form.querySelector('.form-error');message.hidden=false;message.textContent=root.lang==='en'?'Please complete the anti-spam check before sending.':'Veuillez compléter la vérification anti-pourriel avant l’envoi.';return;}
+    if(!captcha?.value){event.preventDefault();const message=form.querySelector('.form-error');message.hidden=false;message.textContent=root.lang==='en'?'Please complete the anti-spam check before sending.':'Veuillez compléter la vérification anti-pourriel avant l’envoi.';message.focus();return;}
     const message=form.querySelector('.form-error');if(message)message.hidden=true;
   });
 })();
