@@ -1,0 +1,15 @@
+.tidio-launcher [data-en]{display:none!important}
+html.en .tidio-launcher [data-fr]{display:none!important}
+html.en .tidio-launcher [data-en]{display:revert!important}
+.tidio-launcher{position:fixed;right:20px;bottom:20px;z-index:2147482999;display:flex;align-items:center;gap:10px;border:0;border-radius:999px;padding:0;background:transparent;color:#101820;font:14px Arial,Helvetica,sans-serif;cursor:pointer;-webkit-tap-highlight-color:transparent;touch-action:manipulation}
+.tidio-launcher-label{padding:14px 17px;border:1px solid #e1e4e1;border-radius:10px;background:#fff;box-shadow:0 4px 18px rgba(16,24,32,.14)}
+.tidio-launcher-icon{width:56px;height:56px;display:grid;place-items:center;border-radius:50%;background:#101820;color:#fff;box-shadow:0 4px 18px rgba(16,24,32,.2)}
+.tidio-launcher-icon svg{width:25px;height:25px}
+.tidio-launcher:hover .tidio-launcher-icon{background:#27323a}
+.tidio-launcher:focus-visible{outline:3px solid #101820;outline-offset:4px}
+.tidio-launcher:disabled{cursor:wait}
+.tidio-launcher.is-loading .tidio-launcher-icon svg{animation:tidio-wait .8s linear infinite}
+@keyframes tidio-wait{to{transform:rotate(360deg)}}
+@media(max-width:760px){.tidio-launcher{right:12px;bottom:12px}.tidio-launcher-label{padding:12px 14px;font-size:13px}.tidio-launcher-icon{width:54px;height:54px}}
+@media(prefers-reduced-motion:reduce){.tidio-launcher.is-loading .tidio-launcher-icon svg{animation:none}}
+@media print{.tidio-launcher{display:none!important}}
