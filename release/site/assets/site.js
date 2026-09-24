@@ -48,3 +48,15 @@
   });
 })();
 
+
+// Lien d'aperçu prospect : vitrin3.com/?entreprise=Nom&source=apercu#demande
+// pré-remplit la demande pour que le prospect n'ait qu'à ajouter son courriel.
+(function(){
+  let q;try{q=new URLSearchParams(location.search);}catch(e){return;}
+  const nom=(q.get('entreprise')||'').slice(0,150);
+  if(!nom&&q.get('source')!=='apercu')return;
+  const form=document.getElementById('dem');if(!form)return;
+  const set=(n,v)=>{const f=form.querySelector('[name="'+n+'"]');if(f&&!f.value)f.value=v;};
+  if(nom)set('entreprise',nom);
+  if(q.get('source')==='apercu')set('message',document.documentElement.lang==='en'?'I saw the preview you prepared for '+(nom||'my business')+'. I would like to book a meeting.':'J’ai vu l’aperçu préparé pour '+(nom||'mon commerce')+'. J’aimerais prendre rendez-vous.');
+})();
